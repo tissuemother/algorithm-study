@@ -6,7 +6,7 @@ int sumall(int** map, int N)
 	int sum = 0;
 	for (int i = 0; i < N; i++)
 	{
-		for (int j = 0; j < N; j++) sum += map[i][j];
+		for (int j = 0; j < N; j++) sum += map[i][j]; //내부 원소 모두 더하기
 	}
 	return sum;
 }
@@ -25,7 +25,7 @@ int cutting(int** map, int N)
 			newmap[dim] = new int*[N / 2];
 			for (int i = 0; i < N / 2; i++)
 			{
-				newmap[dim][i] = new int[N / 2];
+				newmap[dim][i] = new int[N / 2]; //반으로 나누기
 			}
 		}
 		for (int dim = 0; dim < 4; dim++) {
@@ -52,7 +52,7 @@ int cutting(int** map, int N)
 			}
 		}
 		return cutting(newmap[0], N / 2) + cutting(newmap[1], N / 2) + cutting(newmap[2], N / 2) + cutting(newmap[3], N / 2);
-	}
+	} //재귀적으로 1 혹은 0 더하게 
 }
 
 int main()
